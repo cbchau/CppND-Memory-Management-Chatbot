@@ -47,7 +47,9 @@ ChatBot::~ChatBot()
 // copy constructor
 ChatBot::ChatBot(const ChatBot &source){
 
-    _image = source._image;
+    // deep copy
+    *_image = *source._image;
+    // shallow copy
     _rootNode = source._rootNode;
     _chatLogic = source._chatLogic;
     _chatLogic->SetChatbotHandle(this);
@@ -58,7 +60,9 @@ ChatBot::ChatBot(const ChatBot &source){
 ChatBot& ChatBot::operator=(const ChatBot &source){
 
     if (this == &source) return *this; // catch if source already assigned to current pointer
-    _image = source._image;
+    // deep copy
+    *_image = *source._image;
+    // shallow copy
     _rootNode = source._rootNode;
     _chatLogic = source._chatLogic;
     _chatLogic->SetChatbotHandle(this);
