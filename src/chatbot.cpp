@@ -48,6 +48,7 @@ ChatBot::~ChatBot()
 ChatBot::ChatBot(const ChatBot &source){
 
     // deep copy
+    _image = new wxBitmap();
     *_image = *source._image;
     // shallow copy
     _rootNode = source._rootNode;
@@ -61,6 +62,7 @@ ChatBot& ChatBot::operator=(const ChatBot &source){
 
     if (this == &source) return *this; // catch if source already assigned to current pointer
     // deep copy
+    _image = new wxBitmap();
     *_image = *source._image;
     // shallow copy
     _rootNode = source._rootNode;
